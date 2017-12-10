@@ -10,7 +10,7 @@
         "@components": "./application/components",
         "@images": "./application/images",
         "@modules": "./application/modules",
-        "@redecers": "./application/redecers",
+        "@reducers": "./application/reducers",
         "@routes": "./application/routes",
         "@screens": "./application/screens",
         "@store": "./application/store"
