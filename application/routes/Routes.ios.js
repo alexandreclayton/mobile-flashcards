@@ -23,7 +23,7 @@ const Tabs = TabNavigator({
 export const AppNavigator = StackNavigator({
     Home: {
         screen: Tabs,
-        navigationOptions: { title: 'Home' },
+        navigationOptions: { title: 'Flash Cards' },
     }
     /*,
     IndividualDeck: {
