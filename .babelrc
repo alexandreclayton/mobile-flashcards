@@ -1,5 +1,22 @@
 {
   "presets": ["babel-preset-expo"],
+  "plugins": [
+    ["module-resolver", {
+      "cwd": "babelrc",
+      "alias": {
+        "@application": "./application",
+        "@actions": "./application/actions",
+        "@api": "./application/api",
+        "@components": "./application/components",
+        "@images": "./application/images",
+        "@modules": "./application/modules",
+        "@redecers": "./application/redecers",
+        "@routes": "./application/routes",
+        "@screens": "./application/screens",
+        "@store": "./application/store"
+      }
+    }]
+  ],
   "env": {
     "development": {
       "plugins": ["transform-react-jsx-source"]
