@@ -10,7 +10,7 @@ export default class DeckListScreen extends Component {
                 , justifyContent: 'center'
                 , alignItems: 'center'
             }}>
-                <Text>Text de aplicação.</Text>
+                <Text>Test app.</Text>
             </View>
         )
     }
