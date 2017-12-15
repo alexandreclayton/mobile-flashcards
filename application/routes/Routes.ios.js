@@ -4,7 +4,7 @@ import { StackNavigator, TabNavigator } from 'react-navigation'
 import * as Screens from '@screens';
 
 const Tabs = TabNavigator({
-    DeckList: {
+    DeckListScreen: {
         screen: Screens.DeckListScreen,
         navigationOptions: {
             tabBarLabel: 'All Decks'
@@ -23,15 +23,15 @@ const Tabs = TabNavigator({
 export const AppNavigator = StackNavigator({
     Home: {
         screen: Tabs,
-        navigationOptions: { title: 'Flash Cards' },
-    }
-    /*,
-    IndividualDeck: {
-        screen: IndividualDeck,
+        navigationOptions: { title: 'Flash Cards' }
+    },
+    DetailDeckScreen: {
+        screen: Screens.DetailDeckScreen,
         navigationOptions: {
             headerTintColor: '#000',
-        },
+        }
     },
+    /*
     Quiz: {
         screen: Quiz,
         navigationOptions: {
