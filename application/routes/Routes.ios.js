@@ -25,8 +25,8 @@ export const AppNavigator = StackNavigator({
         screen: Tabs,
         navigationOptions: { title: 'Flash Cards' }
     },
-    DetailDeckScreen: {
-        screen: Screens.DetailDeckScreen,
+    DeckDetailScreen: {
+        screen: Screens.DeckDetailScreen,
         navigationOptions: {
             headerTintColor: '#000',
         }

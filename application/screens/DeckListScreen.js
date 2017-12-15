@@ -7,6 +7,10 @@ import * as StorageApi from '@api/StorageApi'
 
 class DeckListScreen extends Component {
 
+    static navigationOptions = ({ navigation }) => ({
+        headerTitle: `Deck List`,
+    });
+
     componentDidMount() {
         let { fetchDecksAction } = this.props
 
@@ -21,7 +25,7 @@ class DeckListScreen extends Component {
 
     renderItem = ({ item }) => (
         <View>
-            <TouchableOpacity onPress={() => this.props.navigation.navigate('DetailDeckScreen', item)}>
+            <TouchableOpacity onPress={() => this.props.navigation.navigate('DeckDetailScreen', item)}>
                 <Card>
                     <CardItem>
                         <Body style={{ justifyContent: 'center', alignItems: 'center' }}>
