@@ -9,10 +9,10 @@ const INITIAL_STATE = {
 
 export default (state = INITIAL_STATE, action) => {
     switch (action.type) {
-        case types.DECK_FETCH:
+        case types.CARD_FIELD_CHANGE:
             return {
                 ...state,
-                decks: { ...action.payload }
+                card: { [action.field]: action.payload }
             };
             break;
 

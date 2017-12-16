@@ -79,4 +79,11 @@ function mapStateToProps(state) {
         decks: state.DeckReducers.decks,
     }
 }
-export default connect(mapStateToProps)(CardNewScreen);
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        cardFieldChangeAction: event => dispatch(cardFieldChangeAction(event))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CardNewScreen);
