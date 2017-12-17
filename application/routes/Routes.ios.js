@@ -36,5 +36,11 @@ export const AppNavigator = StackNavigator({
         navigationOptions: {
             headerTintColor: '#000',
         }
+    },
+    QuizScreen: {
+        screen: Screens.QuizScreen,
+        navigationOptions: {
+            headerTintColor: '#000',
+        }
     }
 });

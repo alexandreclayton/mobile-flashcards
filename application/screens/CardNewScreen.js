@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Card, CardItem, H1, H3, Text, Button, Input, Form, Item, Label } from 'native-base'
 import { StyleSheet, View, KeyboardAvoidingView, Alert } from 'react-native'
 import { connect } from 'react-redux'
+
 import { cardFieldChangeAction, cardAddAction } from '@actions/CardActions'
 
 class CardNewScreen extends Component {

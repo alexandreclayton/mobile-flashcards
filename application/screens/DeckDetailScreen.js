@@ -27,7 +27,7 @@ class DeckDetailScreen extends Component {
                         <Text> Add Card </Text>
                     </Button>
                     {
-                        (lenQuestions > 0) && (<Button primary style={styles.button} block onPress={() => this.props.navigation.navigate('Quiz', deck)}>
+                        (lenQuestions > 0) && (<Button primary style={styles.button} block onPress={() => this.props.navigation.navigate('QuizScreen', deck)}>
                             <Text> Start Quiz </Text>
                         </Button>)
                     }

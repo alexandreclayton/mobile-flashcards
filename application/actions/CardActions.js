@@ -16,11 +16,11 @@ export const cardAddAction = (title, card, goBack) => {
 
         if (question === '') {
             Alert.alert('Mandatory', 'Question cannot be empty')
-            return;
+            return
         }
         if (answer === '') {
             Alert.alert('Mandatory', 'Answer cannot be empty')
-            return;
+            return
         }
 
         dispatch({ type: types.CARD_CLEAN })
@@ -35,6 +35,6 @@ export const cardAddAction = (title, card, goBack) => {
                 {
                     text: 'OK', onPress: (title) => goBack()
                 }
-            ]);
+            ])
     }
 }
