@@ -29,12 +29,26 @@ let decksInitial = {
 
 export function fetchData() {
     return AsyncStorage.getItem(STORAGE_KEY).then(results => {
+        //return createData()
         return results === null ? createData() : JSON.parse(results)
     });
 }
 
-export function saveData(decks) {
-    return AsyncStorage.mergeItem(STORAGE_KEY, JSON.stringify(decks));
+export function addDeck(deck) {
+    return AsyncStorage.mergeItem(STORAGE_KEY, JSON.stringify(deck));
+}
+
+export function addCardToDeck(id, card) {
+    return AsyncStorage.getItem(STORAGE_KEY, (err, result) => {
+        let decks = JSON.parse(result);
+        let newDeck = {
+            [id]: {
+                ...decks[id],
+                questions: [...decks[id].questions, card]
+            }
+        }
+        AsyncStorage.mergeItem(STORAGE_KEY, JSON.stringify(newDeck));
+    });
 }
 
 export function createData() {

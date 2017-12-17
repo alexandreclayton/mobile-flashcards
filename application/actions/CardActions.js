@@ -1,5 +1,6 @@
 import * as types from '@actions/ActionsTypes'
 import { Alert } from 'react-native'
+import * as StorageApi from '@api/StorageApi'
 
 export const cardFieldChangeAction = (field, value) => {
     return {
@@ -29,6 +30,8 @@ export const cardAddAction = (title, card, goBack) => {
             , title: title
             , payload: card
         })
+
+        StorageApi.addCardToDeck(title, card)
 
         Alert.alert('Successful', 'Question Added Successfully',
             [

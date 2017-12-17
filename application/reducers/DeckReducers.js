@@ -10,20 +10,17 @@ export default (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 decks: { ...action.payload }
-            };
-
+            }
         case types.DECK_ADD:
             return {
                 ...state,
                 decks: { ...state.decks, ...action.payload }
-            };
-
+            }
         case types.DECK_EDIT:
             return {
                 ...state,
                 decks: { ...state.decks, [action.title]: { ...action.payload } },
-            };
-
+            }
         case types.DECK_ADD_QUESTION:
             return {
                 ...state,
@@ -34,9 +31,8 @@ export default (state = INITIAL_STATE, action) => {
                         questions: [...state.decks[action.title].questions, action.payload]
                     }
                 },
-            };
-
+            }
         default:
-            return state;
+            return state
     }
 }

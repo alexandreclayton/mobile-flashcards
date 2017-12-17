@@ -13,10 +13,10 @@ export default (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 card: { ...state.card, [action.field]: action.payload }
-            };
+            }
         case types.CARD_CLEAN:
-            return { ...INITIAL_STATE };
+            return { ...INITIAL_STATE }
         default:
-            return state;
+            return state
     }
 }

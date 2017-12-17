@@ -17,6 +17,7 @@ class DeckListScreen extends Component {
 
         StorageApi.fetchData()
             .then(decks => {
+                console.log(decks);
                 fetchDecksAction(decks)
             })
             .catch(e => {

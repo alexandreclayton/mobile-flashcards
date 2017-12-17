@@ -62,6 +62,6 @@ const styles = StyleSheet.create({
 
     },
     backText: {
-        color: '#000',
+        color: 'red',
     }
 });
