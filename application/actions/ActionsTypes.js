@@ -3,6 +3,8 @@ export const DECK_FETCH = "DECK_FETCH"
 export const DECK_ADD = "DECK_ADD"
 export const DECK_EDIT = "DECK_EDIT"
 export const DECK_ADD_QUESTION = "DECK_ADD_QUESTION"
+export const DECK_FIELD_CHANGE = "DECK_FIELD_CHANGE"
+export const DECK_CLEAN = "DECK_CLEAN"
 // CARD
 export const CARD_FIELD_CHANGE = "CARD_FIELD_CHANGE"
 export const CARD_CLEAN = "CARD_CLEAN"

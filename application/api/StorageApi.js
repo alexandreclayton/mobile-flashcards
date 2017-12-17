@@ -35,7 +35,7 @@ export function fetchData() {
 }
 
 export function addDeck(deck) {
-    return AsyncStorage.mergeItem(STORAGE_KEY, JSON.stringify(deck));
+    return AsyncStorage.mergeItem(STORAGE_KEY, JSON.stringify({ [deck.title]: { ...deck } }));
 }
 
 export function addCardToDeck(id, card) {

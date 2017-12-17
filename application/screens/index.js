@@ -1,6 +1,7 @@
 import DeckListScreen from './DeckListScreen'
+import DeckNewScreen from './DeckNewScreen'
 import DeckDetailScreen from './DeckDetailScreen'
 import CardNewScreen from './CardNewScreen'
 import QuizScreen from './QuizScreen'
 
-export { DeckListScreen, DeckDetailScreen, CardNewScreen, QuizScreen }
+export { DeckNewScreen, DeckListScreen, DeckDetailScreen, CardNewScreen, QuizScreen }

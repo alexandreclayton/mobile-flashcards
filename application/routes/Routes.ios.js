@@ -10,14 +10,13 @@ const Tabs = TabNavigator({
             tabBarLabel: 'All Decks'
         },
     }
-    /*,
-    NewDeck: {
-        screen: NewDeck,
+    ,
+    DeckNewScreen: {
+        screen: Screens.DeckNewScreen,
         navigationOptions: {
             tabBarLabel: 'New Deck',
         },
-    },
-    */
+    }
 });
 
 export const AppNavigator = StackNavigator({

@@ -90,4 +90,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(CardNewScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(CardNewScreen)

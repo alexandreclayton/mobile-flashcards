@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { View, FlatList, TouchableOpacity } from 'react-native'
 import { Card, CardItem, Text, Body } from 'native-base'
+import { MaterialCommunityIcons } from '@expo/vector-icons'
 import { connect } from 'react-redux'
 import { fetchDecksAction } from '@actions/DeckActions'
 import * as StorageApi from '@api/StorageApi'
@@ -8,16 +9,21 @@ import * as StorageApi from '@api/StorageApi'
 class DeckListScreen extends Component {
 
     static navigationOptions = ({ navigation }) => ({
-        headerTitle: `Deck List`,
+        tabBarLabel: ({ tintColor }) => <Text style={{ color: tintColor }}>Deck List</Text>,
+        tabBarIcon: ({ tintColor }) => (
+            <MaterialCommunityIcons
+                name="cards"
+                color={tintColor}
+            />
+        ),
     });
 
     componentDidMount() {
-        
+
         let { fetchDecksAction } = this.props
 
         StorageApi.fetchData()
             .then(decks => {
-                console.log(decks);
                 fetchDecksAction(decks)
             })
             .catch(e => {
@@ -66,6 +72,5 @@ const mapDispatchToProps = (dispatch) => {
         fetchDecksAction: decks => dispatch(fetchDecksAction(decks))
     }
 }
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(DeckListScreen)
