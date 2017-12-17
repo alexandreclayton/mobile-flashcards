@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import { Card, CardItem, H1, H2, H3, Text, Button } from 'native-base'
 import { StyleSheet, View } from 'react-native'
 import { connect } from 'react-redux'
+import { setLocalNotification, clearLocalNotification } from '@api/NotificationsApi'
 
 import { onCorrect, onInCorrect, onRestart } from '@actions/QuizActions'
 
@@ -12,6 +13,8 @@ class QuizScreen extends Component {
 
     componentDidMount() {
         this.props.onRestart()
+        clearLocalNotification()
+            .then(setLocalNotification);
     }
 
     static navigationOptions = ({ navigation }) => ({
