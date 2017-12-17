@@ -11,19 +11,19 @@ export default (state = INITIAL_STATE, action) => {
                 ...state,
                 decks: { ...action.payload }
             };
-            break;
+
         case types.DECK_ADD:
             return {
                 ...state,
                 decks: { ...state.decks, ...action.payload }
             };
-            break;
+
         case types.DECK_EDIT:
             return {
                 ...state,
                 decks: { ...state.decks, [action.title]: { ...action.payload } },
             };
-            break;
+
         case types.DECK_ADD_QUESTION:
             return {
                 ...state,
@@ -35,7 +35,7 @@ export default (state = INITIAL_STATE, action) => {
                     }
                 },
             };
-            break;
+
         default:
             return state;
     }

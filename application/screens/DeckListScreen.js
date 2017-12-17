@@ -12,6 +12,7 @@ class DeckListScreen extends Component {
     });
 
     componentDidMount() {
+        
         let { fetchDecksAction } = this.props
 
         StorageApi.fetchData()

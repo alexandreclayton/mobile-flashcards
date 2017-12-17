@@ -2,8 +2,8 @@ import * as types from '@actions/ActionsTypes'
 
 const INITIAL_STATE = {
     card: {
-        question: '',
-        answer: ''
+        answer: '',
+        question: ''
     }
 }
 
@@ -12,9 +12,11 @@ export default (state = INITIAL_STATE, action) => {
         case types.CARD_FIELD_CHANGE:
             return {
                 ...state,
-                card: { [action.field]: action.payload }
+                card: { ...state.card, [action.field]: action.payload }
             };
-            break;
-
+        case types.CARD_CLEAN:
+            return { ...INITIAL_STATE };
+        default:
+            return state;
     }
 }

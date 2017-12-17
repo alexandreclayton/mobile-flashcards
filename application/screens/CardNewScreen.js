@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Card, CardItem, H1, H3, Text, Button, Input, Form, Item, Label } from 'native-base'
 import { StyleSheet, View, KeyboardAvoidingView, Alert } from 'react-native'
+import { connect } from 'react-redux'
+import { cardFieldChangeAction, cardAddAction } from '@actions/CardActions'
 
 class CardNewScreen extends Component {
 
@@ -9,6 +11,10 @@ class CardNewScreen extends Component {
     })
 
     render() {
+        const { card, cardFieldChangeAction, cardAddAction, navigation } = this.props
+        const { goBack, state } = navigation
+        const { title } = state.params
+
         return (
             <Card behavior={'padding'} style={styles.card}>
                 <CardItem style={styles.cardItem}>
@@ -17,21 +23,21 @@ class CardNewScreen extends Component {
                             <Item floatingLabel>
                                 <Label>Question</Label>
                                 <Input
-                                    onChangeText={(question) => this.setState({ question })}
-                                    value={this.state.question}
+                                    onChangeText={(value) => cardFieldChangeAction('question', value)}
+                                    value={card.question}
                                 />
                             </Item>
                             <Item floatingLabel>
                                 <Label>Answer</Label>
                                 <Input
-                                    onChangeText={(answer) => this.setState({ answer })}
-                                    value={this.state.answer}
+                                    onChangeText={(value) => cardFieldChangeAction('answer', value)}
+                                    value={card.answer}
                                 />
                             </Item>
                         </Form>
                     </View>
                     <View style={styles.buttonContainer}>
-                        <Button primary style={styles.button} block onPress={this.handleSubmit}>
+                        <Button primary style={styles.button} block onPress={() => cardAddAction(title, card, goBack)}>
                             <Text> Submit </Text>
                         </Button>
                     </View>
@@ -42,10 +48,6 @@ class CardNewScreen extends Component {
     }
 
 }
-
-NewCard.navigationOptions = ({ navigation }) => ({
-    headerTitle: 'New Card'
-});
 
 const styles = StyleSheet.create({
     card: {
@@ -76,13 +78,14 @@ const styles = StyleSheet.create({
 
 function mapStateToProps(state) {
     return {
-        decks: state.DeckReducers.decks,
+        card: state.CardReducers.card,
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        cardFieldChangeAction: event => dispatch(cardFieldChangeAction(event))
+        cardFieldChangeAction: (field, value) => dispatch(cardFieldChangeAction(field, value))
+        , cardAddAction: (title, card, goBack) => dispatch(cardAddAction(title, card, goBack))
     }
 }
 

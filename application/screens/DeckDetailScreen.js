@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Card, CardItem, H1, H3, Text, Button } from 'native-base'
-import { StyleSheet, View } from 'react-native'
+import { StyleSheet, Alert, View } from 'react-native'
 
 class DeckDetailScreen extends Component {
 
@@ -23,11 +23,11 @@ class DeckDetailScreen extends Component {
                     <H3 style={styles.cardCount}> {`${lenQuestions} card(s)`}</H3>
                 </View>
                 <View style={styles.btnContainer}>
-                    <Button info style={styles.button} block onPress={() => navigate('NewCard', { deck })}>
+                    <Button info style={styles.button} block onPress={() => this.props.navigation.navigate('CardNewScreen', deck)}>
                         <Text> Add Card </Text>
                     </Button>
                     {
-                        (lenQuestions > 0) && (<Button primary style={styles.button} block onPress={() => navigate('Quiz', { deck })}>
+                        (lenQuestions > 0) && (<Button primary style={styles.button} block onPress={() => this.props.navigation.navigate('Quiz', { deck })}>
                             <Text> Start Quiz </Text>
                         </Button>)
                     }
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     },
     button: {
         margin: 15,
-    }    
+    }
 });
 
 function mapStateToProps(state) {

@@ -31,20 +31,10 @@ export const AppNavigator = StackNavigator({
             headerTintColor: '#000',
         }
     },
-    /*
-    Quiz: {
-        screen: Quiz,
+    CardNewScreen: {
+        screen: Screens.CardNewScreen,
         navigationOptions: {
-            title: 'Quiz',
             headerTintColor: '#000',
-        },
-    },
-    NewQuestion: {
-        screen: NewQuestion,
-        navigationOptions: {
-            title: 'Add Question',
-            headerTintColor: '#000',
-        },
-    },
-    */
+        }
+    }
 });

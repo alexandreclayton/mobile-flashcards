@@ -1,10 +1,40 @@
 import * as types from '@actions/ActionsTypes'
+import { Alert } from 'react-native'
 
-
-export const cardFieldChangeAction = (event) => {
+export const cardFieldChangeAction = (field, value) => {
     return {
         type: types.CARD_FIELD_CHANGE
-        , field: event.target.name
-        , payload: event.target.value
+        , field: field
+        , payload: value
+    }
+}
+
+export const cardAddAction = (title, card, goBack) => {
+    return dispatch => {
+
+        let { answer, question } = card
+
+        if (question === '') {
+            Alert.alert('Mandatory', 'Question cannot be empty')
+            return;
+        }
+        if (answer === '') {
+            Alert.alert('Mandatory', 'Answer cannot be empty')
+            return;
+        }
+
+        dispatch({ type: types.CARD_CLEAN })
+        dispatch({
+            type: types.DECK_ADD_QUESTION
+            , title: title
+            , payload: card
+        })
+
+        Alert.alert('Successful', 'Question Added Successfully',
+            [
+                {
+                    text: 'OK', onPress: (title) => goBack()
+                }
+            ]);
     }
 }
