@@ -18,7 +18,7 @@ This project was bootstrapped with [Create React Native App](https://github.com/
 * Press d to toggle development mode. (current mode: development)
 
 ## Setup
-
+### Note: The project will work only on iOS for now.
 1. Install the Expo app on your iOS or Android phone.
 2. Clone this repository. 
   ```
