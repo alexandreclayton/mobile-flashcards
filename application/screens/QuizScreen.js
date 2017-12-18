@@ -125,7 +125,6 @@ function mapStateToProps(state) {
     }
 }
 
-
 const mapDispatchToProps = (dispatch) => {
     return {
         onCorrect: () => dispatch(onCorrect()),
@@ -133,6 +132,5 @@ const mapDispatchToProps = (dispatch) => {
         onRestart: () => dispatch(onRestart())
     }
 }
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(QuizScreen)
