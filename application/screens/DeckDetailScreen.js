@@ -6,12 +6,12 @@ import { StyleSheet, Alert, View } from 'react-native'
 class DeckDetailScreen extends Component {
 
     static navigationOptions = ({ navigation }) => ({
-        headerTitle: `Deck Detail`,
+        headerTitle: `Detail: ${navigation.state.params.title}`,
     })
 
     render() {
 
-        let { title } = this.props.navigation.state.params;
+        const { title } = this.props.navigation.state.params;
         const deck = this.props.decks[title];
         const questions = deck && deck.questions;
         const lenQuestions = questions.length;

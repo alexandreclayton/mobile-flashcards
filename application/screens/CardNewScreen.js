@@ -7,7 +7,7 @@ import { cardFieldChangeAction, cardAddAction } from '@actions/CardActions'
 
 class CardNewScreen extends Component {
 
-    static navigationOptions = ({ navigation }) => ({
+    static navigationOptions = () => ({
         headerTitle: `New Card`,
     })
 

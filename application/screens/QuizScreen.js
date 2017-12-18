@@ -17,7 +17,7 @@ class QuizScreen extends Component {
             .then(setLocalNotification);
     }
 
-    static navigationOptions = ({ navigation }) => ({
+    static navigationOptions = () => ({
         headerTitle: `Quiz`,
     });
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, FlatList, TouchableOpacity } from 'react-native'
+import { View, FlatList, TouchableOpacity, StyleSheet } from 'react-native'
 import { Card, CardItem, Text, Body } from 'native-base'
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 import { connect } from 'react-redux'
@@ -8,7 +8,7 @@ import * as StorageApi from '@api/StorageApi'
 
 class DeckListScreen extends Component {
 
-    static navigationOptions = ({ navigation }) => ({
+    static navigationOptions = () => ({
         tabBarLabel: ({ tintColor }) => <Text style={{ color: tintColor }}>Deck List</Text>,
         tabBarIcon: ({ tintColor }) => (
             <MaterialCommunityIcons
