@@ -32,7 +32,7 @@ class DeckListScreen extends Component {
     }
 
     renderItem = ({ item }) => (
-        <View style={styles.container}>
+        <View>
             <TouchableOpacity onPress={() => this.props.navigation.navigate('DeckDetailScreen', item)}>
                 <Card>
                     <CardItem>
@@ -49,7 +49,7 @@ class DeckListScreen extends Component {
     render() {
         let { decks } = this.props
         return (
-            <View>
+            <View style={styles.container}>
                 <FlatList
                     data={Object.values(decks).sort((a, b) => a.title > b.title)}
                     renderItem={this.renderItem}
