@@ -32,13 +32,13 @@ class DeckListScreen extends Component {
     }
 
     renderItem = ({ item }) => (
-        <View>
+        <View style={styles.container}>
             <TouchableOpacity onPress={() => this.props.navigation.navigate('DeckDetailScreen', item)}>
                 <Card>
                     <CardItem>
-                        <Body style={{ justifyContent: 'center', alignItems: 'center' }}>
-                            <Text style={{ fontSize: 24 }}>{item.title}</Text>
-                            <Text style={{ fontSize: 18, color: '#666666' }}>{item.questions.length} cards</Text>
+                        <Body style={styles.cardItem}>
+                            <Text style={styles.titleDeck}>{item.title}</Text>
+                            <Text style={styles.subTitleDeck}>{item.questions.length} cards</Text>
                         </Body>
                     </CardItem>
                 </Card>
@@ -59,6 +59,22 @@ class DeckListScreen extends Component {
     }
 }
 
+const styles = StyleSheet.create({
+    container: {
+        flex: 1
+    },
+    cardItem: {
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    titleDeck: {
+        fontSize: 24
+    },
+    subTitleDeck: {
+        fontSize: 18,
+        color: '#666666'
+    }
+})
 
 function mapStateToProps(state) {
     return {

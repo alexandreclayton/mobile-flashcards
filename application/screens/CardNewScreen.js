@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { Card, CardItem, H1, H3, Text, Button, Input, Form, Item, Label } from 'native-base'
-import { StyleSheet, View, KeyboardAvoidingView, Alert } from 'react-native'
+import { H1, H3, Text, Button, Input, Form, Item, Label } from 'native-base'
+import { StyleSheet, View } from 'react-native'
 import { connect } from 'react-redux'
 
 import { cardFieldChangeAction, cardAddAction } from '@actions/CardActions'
@@ -17,48 +17,39 @@ class CardNewScreen extends Component {
         const { title } = state.params
 
         return (
-            <Card behavior={'padding'} style={styles.card}>
-                <CardItem style={styles.cardItem}>
-                    <View style={styles.infoContainer}>
-                        <Form style={styles.input}>
-                            <Item floatingLabel>
-                                <Label>Question</Label>
-                                <Input
-                                    onChangeText={(value) => cardFieldChangeAction('question', value)}
-                                    value={card.question}
-                                />
-                            </Item>
-                            <Item floatingLabel>
-                                <Label>Answer</Label>
-                                <Input
-                                    onChangeText={(value) => cardFieldChangeAction('answer', value)}
-                                    value={card.answer}
-                                />
-                            </Item>
-                        </Form>
-                    </View>
-                    <View style={styles.buttonContainer}>
-                        <Button primary style={styles.button} block onPress={() => cardAddAction(title, card, goBack)}>
-                            <Text> Submit </Text>
-                        </Button>
-                    </View>
-                </CardItem>
-            </Card>
-        );
-
+            <View style={styles.container}>
+                <View style={styles.infoContainer}>
+                    <Form style={styles.input}>
+                        <Item floatingLabel>
+                            <Label>Question</Label>
+                            <Input
+                                onChangeText={(value) => cardFieldChangeAction('question', value)}
+                                value={card.question}
+                            />
+                        </Item>
+                        <Item floatingLabel>
+                            <Label>Answer</Label>
+                            <Input
+                                onChangeText={(value) => cardFieldChangeAction('answer', value)}
+                                value={card.answer}
+                            />
+                        </Item>
+                    </Form>
+                </View>
+                <View style={styles.buttonContainer}>
+                    <Button primary style={styles.button} block onPress={() => cardAddAction(title, card, goBack)}>
+                        <Text> Submit </Text>
+                    </Button>
+                </View>
+            </View>
+        )
     }
-
 }
 
 const styles = StyleSheet.create({
-    card: {
+    container: {
         flex: 1
-    },
-    cardItem: {
-        alignItems: 'stretch',
-        flexDirection: 'column',
-        flex: 1
-    },
+    },    
     buttonContainer: {
         flex: 1,
     },
@@ -75,7 +66,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     }
-});
+})
 
 function mapStateToProps(state) {
     return {

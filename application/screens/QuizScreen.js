@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
     button: {
         margin: 15,
     },
-});
+})
 
 function mapStateToProps(state) {
     return {
