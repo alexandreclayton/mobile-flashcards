@@ -37,4 +37,4 @@ This project was bootstrapped with [Create React Native App](https://github.com/
   npm start
   ```
 
-![Expo QR Code](https://github.com/alexandreclayton/mobile-flashcards/expo-qr-code.png)
+![Expo QR Code](https://raw.githubusercontent.com/alexandreclayton/mobile-flashcards/master/expo-qr-code.png)
